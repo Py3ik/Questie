@@ -35,7 +35,6 @@ local math_max = math.max;
 QuestiePlayer.numberOfGroupMembers = 0
 
 function QuestiePlayer:Initialize()
-    1
     _QuestiePlayer.playerLevel = UnitLevel("player")
     local raceId = select(3, UnitRace("player"))
     if raceId and raceId > 0 then
