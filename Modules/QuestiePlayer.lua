@@ -36,8 +36,12 @@ QuestiePlayer.numberOfGroupMembers = 0
 
 function QuestiePlayer:Initialize()
     _QuestiePlayer.playerLevel = UnitLevel("player")
-
-    playerRaceId = select(3, UnitRace("player"))
+    local raceId = select(3, UnitRace("player"))
+    if raceId and raceId > 0 then
+        playerRaceId = raceId
+    else
+        playerRaceId = 1
+    end
     playerRaceFlag = 2 ^ (playerRaceId - 1)
     playerRaceFlagX2 = 2 * playerRaceFlag
 
